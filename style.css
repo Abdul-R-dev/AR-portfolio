@@ -578,7 +578,10 @@ body {
     font-weight: 600;
     animation: highlighterDark 2s ease-in-out infinite;
 }
-
+.sendBtn:hover {
+    background-color: rgb(229, 238, 246);
+    cursor: pointer;
+}
 @keyframes highlighterDark {
     0% {
         box-shadow: 0px 0px 10px 1px rgba(11, 59, 102, 0.6);
