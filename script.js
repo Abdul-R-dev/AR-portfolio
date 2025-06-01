@@ -1,5 +1,5 @@
 // Function to check if the section is in the viewport
-function checkScroll() {
+function progressAniFunc() {
     const sections = document.querySelectorAll('.innerBar');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect(); // Get the position of the section
@@ -81,16 +81,23 @@ numbers.forEach(number => {
 
 
 // Run the function on scroll
-window.addEventListener('scroll', checkScroll);
+window.addEventListener('scroll', progressAniFunc);
 window.addEventListener('scroll', visibilityFunc);
 window.addEventListener('scroll', slideAniFunc);
 
 // Initial check when the page loads
-checkScroll();
+progressAniFunc();
 visibilityFunc();
 slideAniFunc();
 
 var typed = new Typed("#element", {
-    strings: ["Web Developer.", "Graphic Designer.", "Multipotentialite."],
-    typeSpeed: 80,
+    strings: ["Graphic Designer.", "Web Developer."],
+    typeSpeed: 100,
 });
+
+//responsive burger menu
+
+let innerNavUlEl = document.querySelector(".innerNavUl")
+innerNavUlEl.addEventListener('click', () => {
+    innerNavUlEl.classList.toggle('menuActive')
+})
