@@ -14,6 +14,10 @@ body {
     background-color: black;
 }
 
+#mobileMenuBtn {
+    display: none;
+}
+
 #nav {
     background-image: linear-gradient(to left, black, rgb(1, 1, 99));
     display: flex;
@@ -166,8 +170,6 @@ body {
         height: 100px;
     }
 }
-
-/* ---------------Skills Section-------------- */
 
 .iconsC {
     margin-top: 10px;
@@ -327,10 +329,10 @@ body {
     position: relative;
     right: -450px;
     top: -380px;
+    text-align: justify;
 }
 
 #aboutSectionC div p {
-    text-align: justify;
     text-shadow: 5px 5px 5px black;
     font-size: large;
     opacity: 0;
@@ -527,6 +529,11 @@ body {
     margin-top: 10px;
 }
 
+.inputMoreWidth {
+    width: 450px;
+    height: 70px;
+}
+
 .leftContact {
     width: 280px;
     height: 200px;
@@ -642,213 +649,206 @@ body {
     margin-top: 80px;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 1200px) {
-    #skillsC {
-        margin: 20px 50px !important;
+/* --------------------------- Responsive ------------------------ */
+
+
+
+@media (max-width: 480px) {
+
+    /* ----------------- nav --------------- */
+
+    #mobileMenuBtn {
+        display: inline;
+        background-color: transparent;
+        border: none;
+        font-size: 25px;
+        margin-right: 50px;
+        animation: rightSlide 2s ease 1;
     }
 
-    .forTxt {
-        margin: 30px 50px !important;
-    }
-
-    #aboutSection div {
-        width: 500px !important;
-        right: -350px !important;
-    }
-
-    .resumeBtn {
-        left: 600px !important;
-    }
-}
-
-@media (max-width: 992px) {
-    .sideImg img {
-        right: 50px !important;
-        height: 300px !important;
-    }
-
-    #introTxt {
-        left: 10% !important;
-    }
-
-    #aboutSection {
-        padding: 50px 30px !important;
-    }
-
-    #aboutSection img {
-        height: 250px !important;
-        margin: 20px !important;
-    }
-
-    #aboutSection div {
-        width: 400px !important;
-        right: -250px !important;
-        top: -300px !important;
-    }
-
-    .resumeBtn {
-        left: 450px !important;
-        top: -250px !important;
-    }
-
-    .projectsC {
-        margin: 30px 50px !important;
-    }
-
-    .contactC {
-        flex-direction: column;
-        height: auto !important;
-        padding: 20px !important;
-    }
-
-    .middleLine {
-        width: 80% !important;
-        height: 3px !important;
-        margin: 20px 0 !important;
-    }
-
-    .leftContact {
-        margin-bottom: 20px !important;
-    }
-}
-
-@media (max-width: 768px) {
     #nav {
-        flex-direction: column;
-        height: auto !important;
-        padding: 10px 0 !important;
-    }
-
-    #innerNav {
-        display: none;
-        width: 100%;
-    }
-
-    #innerNav.active {
-        display: block;
+        justify-content: space-between;
     }
 
     #innerNav ul {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 25px;
+        right: 80px;
+        background-color: rgb(1, 1, 99);
+        border-radius: 15px;
+        border-top-right-radius: 0px;
     }
 
-    #mobileMenuBtn {
-        display: block;
+    .menuActive {
+        display: flex;
     }
 
-    .sideImg img {
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        display: block;
-        margin: 20px auto;
-        height: 250px !important;
+    #innerNav ul li {
+        margin: 0px;
+    }
+
+    /* --------------- home ----------------- */
+
+    #LHstyleBar {
+        top: 12%;
+    }
+
+    #LVstyleBar {
+        top: 12%;
     }
 
     #introTxt {
-        position: static !important;
-        text-align: center;
-        margin: 20px auto;
-        width: 90%;
+        top: 17%;
+        width: 270px;
     }
 
-    .larger,
-    #element {
-        font-size: 30px !important;
+    .larger {
+        font-size: 30px;
+        text-align: center;
     }
+
+    #element {
+        font-size: 30px;
+    }
+
+    #home {
+        text-align: center;
+    }
+
+    .iconsC {
+        margin-top: 460px;
+    }
+
+    .sideImg img {
+        right: 100px;
+        top: 320px;
+    }
+
+    #RHstyleBar {
+        top: 95%;
+        right: 10%;
+    }
+
+    #RVstyleBar {
+        position: absolute;
+        bottom: 5%;
+        right: 10%;
+    }
+
+    /* --------------------- skills ---------------------- */
 
     #skillsC {
-        grid-template-columns: 1fr 1fr 1fr !important;
-        height: auto !important;
-        padding: 20px 10px !important;
+        margin: 20px 20px;
+        padding: 10px 10px;
+        height: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .positionCenter {
+        position: relative;
+        left: 125px;
     }
 
     .skill {
-        width: 90px !important;
-        height: 110px !important;
-        margin: 5px !important;
+        margin: 5px;
     }
 
+    .forTxt {
+        margin: 30px 20px;
+        padding: 15px 30px;
+        height: auto;
+        background-color: rgb(124, 194, 255);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 1px rgb(124, 194, 255, 0.8);
+    }
+
+    /* ----------------- about -------------------- */
+
     #aboutSection {
-        height: auto !important;
-        padding-bottom: 50px !important;
+        padding: 0px;
+        text-align: center;
+    }
+
+    #aboutSection h2 {
+        margin: 20px;
     }
 
     #aboutSection img {
-        display: block;
-        margin: 0 auto 20px !important;
-        float: none !important;
+        margin: 20px 0px;
+        height: 220px;
     }
 
     #aboutSection div {
-        position: static !important;
-        width: 90% !important;
-        margin: 0 auto !important;
-        float: none !important;
+        width: 350px;
+        padding: 20px;
+        position: static;
+        text-align: justify;
+        margin-left: 40px;
     }
 
     .resumeBtn {
-        position: static !important;
-        display: block;
-        margin: 20px auto !important;
+        margin-top: 25px;
+        top: 20px;
+        left: 0px;
     }
 
     .lineBreak {
-        position: static !important;
-        margin: 20px auto !important;
-        width: 90% !important;
+        width: calc(100% - 100px);
+        height: 3px;
+        background-color: rgb(45, 155, 251);
+        margin: 0px 50px 0px 50px;
+        position: absolute;
+        bottom: -1800px;
     }
 
     .projectsC {
-        margin: 30px 10px !important;
+        margin: 50px 30px;
+        padding: 20px 0px;
+        box-shadow: inset 0px 0px 10px 1px black;
+        overflow: hidden;
     }
 
-    .project {
-        width: 150px !important;
-        height: 200px !important;
-        margin-right: 20px !important;
+    .projectNumbers {
+        margin: 10px 30px;
+        flex-direction: column;
     }
 
-    .contactC form input {
-        width: 90% !important;
+    .projectNumbers div {
+        width: 330px;
+        height: 100px;
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        margin: 25px;
     }
 
-    #forCountrySelection {
-        width: 90% !important;
+    .projectNumbers div p {
+        margin: 10px;
+        font-size: 20px;
     }
 
-    .contactC form input[style*="450px"] {
-        width: 90% !important;
-    }
-}
+    /* ----------------- contact ------------- */
 
-@media (max-width: 480px) {
-    #skillsC {
-        grid-template-columns: 1fr 1fr !important;
-    }
 
-    .larger,
-    #element {
-        font-size: 24px !important;
+    .contactC {
+        width: 90vw;
+        height: 80vh;
+        flex-direction: column;
     }
 
-    .iconsC a img {
-        width: 25px !important;
-        margin-right: 10px !important;
+    .middleLine {
+        width: 50vw;
+        height: 3px;
+        margin: 40px 40px;
     }
 
-    .contactBtn {
-        padding: 8px 12px !important;
-        font-size: 14px !important;
-    }
-
-    .project {
-        width: 120px !important;
-        height: 180px !important;
-    }
-
-    .leftContact div {
-        width: 90% !important;
+    .inputMoreWidth {
+        width: 250px;
+        height: 100px;
     }
 }
