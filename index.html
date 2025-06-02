@@ -14,7 +14,7 @@
     <div id="nav">
       <img id="logoImg" src="images/Untitled_design-removebg.png" alt="logo" />
       <div id="innerNav">
-        <ul class="innerNavUl">
+        <ul id="innerNavUl">
           <li><a href="">Home</a></li>
           <li><a href="#skillsSection">Skills</a></li>
           <li><a href="#aboutSection">About</a></li>
@@ -262,6 +262,14 @@
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="script.js"></script>
+  <script>
+    const menuBtnEl = document.querySelector('#mobileMenuBtn');
+    const innerNavUlEl = document.querySelector('#innerNavUl');
+
+    menuBtnEl.addEventListener('click', () => {
+      innerNavUlEl.classList.toggle('menuActive');
+    });
+  </script>
 </body>
 
 </html>
