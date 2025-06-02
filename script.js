@@ -94,10 +94,3 @@ var typed = new Typed("#element", {
     strings: ["Graphic Designer.", "Web Developer."],
     typeSpeed: 100,
 });
-
-//responsive burger menu
-
-let innerNavUlEl = document.querySelector(".innerNavUl")
-innerNavUlEl.addEventListener('click', () => {
-    innerNavUlEl.classList.toggle('menuActive')
-})
