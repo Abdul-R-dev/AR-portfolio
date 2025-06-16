@@ -52,7 +52,10 @@ body {
 
 #innerNav ul li a:hover {
     color: rgb(61, 161, 255);
-    font-size: 15.7px;
+}
+
+#innerNav ul li:hover {
+    transform: scale(1.2);
 }
 
 /* --------------------------Home Section------------------------- */
@@ -103,10 +106,15 @@ body {
     }
 }
 
+.homeBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5% 10%;
+}
+
 #introTxt {
-    position: absolute;
-    top: 30%;
-    left: 20%;
+    width: 360px;
 }
 
 .larger {
@@ -118,17 +126,13 @@ body {
     color: rgb(4, 129, 245);
 }
 
-.sideImg img {
-    height: 400px;
-    position: absolute;
-    right: 200px;
-    top: 100px;
+.sideImgC img {
+    height: 350px;
     box-shadow: 0 10px 20px rgba(0, 0, 0);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0));
 }
 
-.sideImg {
-    opacity: 0;
+.sideImgC {
     animation: visibility 3s ease 0s 1 forwards;
 }
 
@@ -183,6 +187,11 @@ body {
     filter: drop-shadow(0 0px 5px rgb(124, 194, 255));
 }
 
+.iconsC a img:hover {
+    transform: scale(1.2);
+
+}
+
 .contactBtn {
     color: black;
     margin: 20px 0px;
@@ -197,31 +206,40 @@ body {
 
 .contactBtn:hover {
     background-color: rgb(232, 240, 247);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
-/* ----------------Skills Section------------------ */
+/* --------------------------Skills Section------------------------- */
 
 #skillsSection {
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to right, black, rgb(1, 1, 99));
 }
 
 #skillsSection h2 {
     text-align: center;
-    padding-top: 20px;
+    padding: 20px 0px;
     font-size: 30px;
     color: rgb(124, 194, 255);
     text-shadow: 2px 2px 20px;
 }
 
+.skillbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 12%;
+}
+
 #skillsC {
-    margin: 20px 200px;
-    padding: 20px 20px;
-    height: 350px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    place-items: center;
+    min-width: 280px;
+    max-width: 910px;
+    padding: 20px 3%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     background-color: rgb(124, 194, 255);
     border-radius: 30px;
     box-shadow: 0px 0px 10px 1px rgb(124, 194, 255, 0.8);
@@ -231,13 +249,19 @@ body {
 .skill {
     width: 110px;
     height: 130px;
+    margin: 1% 2%;
     background-color: blue;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 7px 1px rgba(6, 6, 6, 0.5);
+    box-shadow: -5px 5px 7px 1px rgba(6, 6, 6, 0.5);
+}
+
+.skill:hover {
+    transform: scale(1.1);
+    transition: transform 500ms ease;
 }
 
 .skill img {
@@ -280,9 +304,9 @@ body {
 }
 
 .forTxt {
-    margin: 30px 250px;
+    margin: 30px 0px;
+    max-width: 910px;
     padding: 15px 30px;
-    height: 110px;
     background-color: rgb(124, 194, 255);
     border-radius: 30px;
     box-shadow: 0px 0px 10px 1px rgb(124, 194, 255, 0.8);
@@ -294,19 +318,32 @@ body {
     text-align: justify;
 }
 
-/* ---------------About section-------------- */
+/* ------------------------------------About section-------------------------------- */
 
 #aboutSection {
     height: 100vh;
     background: linear-gradient(rgb(0, 0, 0) 0%, rgb(7, 7, 82) 40%, rgb(24, 5, 88) 80%, rgb(10, 5, 54) 100%);
-    padding: 50px 100px;
+    padding: 5% 10%;
+    text-align: center;
+}
+
+.flexContainer {
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aboutImgC {
+    width: 15%;
+    min-width: 150px;
 }
 
 #aboutSection img {
-    height: 350px;
+    max-width: 100%;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0));
     animation: float 3s ease-in-out infinite;
-    margin: 50px;
+    object-fit: contain;
 }
 
 @keyframes float {
@@ -323,15 +360,20 @@ body {
     }
 }
 
-#aboutSection div {
+.aboutPara {
     box-shadow: 5px 10px 10px 2px black;
-    width: 650px;
-    padding: 20px;
-    position: relative;
-    right: -450px;
-    top: -380px;
+    width: 60%;
+    min-width: 250px;
+    height: auto;
+    padding: 25px;
     text-align: justify;
 }
+
+.aboutPara:hover {
+    transform: skewX(5deg);
+    transition: transform 1s ease;
+}
+
 
 #aboutSectionC div p {
     text-shadow: 5px 5px 5px black;
@@ -362,16 +404,13 @@ body {
 
 .resumeBtn {
     color: black;
-    margin: 20px 20px;
+    margin: 30px 40px;
     padding: 10px 15px;
     background-color: rgb(124, 194, 255);
     border: none;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 1px rgb(124, 194, 255, 0.6);
     font-weight: 600;
-    position: relative;
-    top: -330px;
-    left: 615px;
     animation: highlighter 2s ease-in-out infinite;
 }
 
@@ -391,16 +430,14 @@ body {
 
 .resumeBtn:hover {
     background-color: rgb(229, 238, 246);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .lineBreak {
-    width: calc(100% - 160px);
     height: 3px;
     background-color: rgb(45, 155, 251);
-    margin: 0px 80px 0px 80px;
-    position: absolute;
-    bottom: -1160px;
+    margin: 30px 80px 0px 80px;
 }
 
 /* ----------------Projects Section ---------------------- */
@@ -463,12 +500,12 @@ body {
 
 .project p {
     font-size: small;
-    padding: 5px;
+    padding: 12px 5px;
     color: white;
 }
 
 .projectNumbers {
-    margin: 10px 300px;
+    margin: 20px 15%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -487,6 +524,10 @@ body {
     border-radius: 50px;
 }
 
+.projectNumbers div:hover {
+    box-shadow: 0px 0px 15px 4px blue;
+}
+
 .projectNumbers div p {
     color: rgb(1, 1, 126);
     margin-top: 10px;
@@ -498,7 +539,7 @@ body {
     font-size: 50px;
 }
 
-/* -------------------Contact section------------------- */
+/* ----------------------------Contact section---------------------------- */
 
 #contactSection {
     height: 100vh;
@@ -536,8 +577,8 @@ body {
 }
 
 .leftContact {
-    width: 280px;
-    height: 200px;
+    min-height: 200px;
+    min-width: 280px;
     background-color: rgb(19, 17, 17);
     display: flex;
     flex-direction: column;
@@ -631,6 +672,12 @@ body {
     animation: highlighterDark 2s ease-in-out infinite;
 }
 
+.sendBtn:hover {
+    background-color: rgb(232, 240, 247);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 @keyframes highlighterDark {
     0% {
         box-shadow: 0px 0px 10px 1px rgba(11, 59, 102, 0.6);
@@ -652,7 +699,12 @@ body {
 
 /* --------------------------- Responsive ------------------------ */
 
-
+@media (min-width: 480px) and (max-width: 768px) {
+    .homeBox {
+        transform: scale(0.7);
+        padding: 5% 10%;
+    }
+}
 
 @media (max-width: 480px) {
 
@@ -694,7 +746,10 @@ body {
 
     #innerNav ul li a:hover {
         color: rgb(61, 161, 255);
-        font-size: 15.7px;
+    }
+
+    #innerNav ul li:hover {
+        transform: scale(1.1);
     }
 
     /* --------------- home ----------------- */
@@ -707,9 +762,9 @@ body {
         top: 12%;
     }
 
-    #introTxt {
-        top: 17%;
-        width: 270px;
+    .homeBox {
+        flex-direction: column;
+        padding: 50px 0px;
     }
 
     .larger {
@@ -722,11 +777,8 @@ body {
     }
 
     #home {
+        height: 100%;
         text-align: center;
-    }
-
-    .iconsC {
-        margin-top: 460px;
     }
 
     .sideImg img {
@@ -747,36 +799,26 @@ body {
 
     /* --------------------- skills ---------------------- */
 
-    #skillsC {
-        margin: 20px 20px;
-        padding: 10px 10px;
-        height: auto;
-        grid-template-columns: 1fr 1fr 1fr;
+    #skillsSection h2 {
+        padding: 20px 0px 0px 0px;
     }
 
-    .positionCenter {
-        position: relative;
-        left: 125px;
+    .skillbox {
+        margin: 0px 10px;
+        transform: scale(0.95);
     }
 
-    .skill {
-        margin: 5px;
-    }
-
-    .forTxt {
-        margin: 30px 20px;
-        padding: 15px 30px;
-        height: auto;
-        background-color: rgb(124, 194, 255);
-        border-radius: 20px;
-        box-shadow: 0px 0px 10px 1px rgb(124, 194, 255, 0.8);
-    }
-
-    /* ----------------- about -------------------- */
+    /* ---------------------- about -------------------- */
 
     #aboutSection {
         padding: 0px;
         text-align: center;
+        height: auto;
+    }
+
+    .flexContainer {
+        margin: 20px;
+        flex-direction: column;
     }
 
     #aboutSection h2 {
@@ -784,22 +826,15 @@ body {
     }
 
     #aboutSection img {
-        margin: 20px 0px;
         height: 220px;
     }
 
-    #aboutSection div {
-        width: 350px;
-        padding: 20px;
-        position: static;
-        text-align: justify;
-        margin-left: 40px;
+    .aboutPara {
+        width: 100%;
     }
 
     .resumeBtn {
-        margin-top: 25px;
-        top: 20px;
-        left: 0px;
+        margin: 20px 20px 30px 20px;
     }
 
     .lineBreak {
@@ -807,8 +842,12 @@ body {
         height: 3px;
         background-color: rgb(45, 155, 251);
         margin: 0px 50px 0px 50px;
-        position: absolute;
-        bottom: -1800px;
+    }
+
+    /* ---------------------------- project Section ------------------------- */
+
+    #projectsSection {
+        height: 100%;
     }
 
     .projectsC {
@@ -824,7 +863,7 @@ body {
     }
 
     .projectNumbers div {
-        width: 330px;
+        width: 100%;
         height: 100px;
         display: flex;
         text-align: center;
@@ -832,30 +871,44 @@ body {
         justify-content: center;
         align-items: center;
         border-radius: 50px;
-        margin: 25px;
+        margin: 20px;
     }
 
     .projectNumbers div p {
         margin: 10px;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     /* ----------------- contact ------------- */
 
+    #contactSection {
+        height: 100%;
+    }
+
     .contactC {
         width: 90vw;
-        height: 80vh;
+        height: 100%;
         flex-direction: column;
     }
 
+    .leftContact {
+        transform: scale(0.9);
+    }
+
     .middleLine {
-        width: 50vw;
-        height: 3px;
-        margin: 40px 40px;
+        display: none;
+    }
+
+    form {
+        margin: 20px 0px 0px 0px;
     }
 
     .inputMoreWidth {
         width: 250px;
         height: 100px;
+    }
+
+    .footer {
+        margin-top: 120px;
     }
 }
