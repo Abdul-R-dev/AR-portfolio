@@ -787,13 +787,13 @@ body {
     }
 
     #RHstyleBar {
-        top: 95%;
+        top: 125%;
         right: 10%;
     }
 
     #RVstyleBar {
         position: absolute;
-        bottom: 5%;
+        bottom: -25%;
         right: 10%;
     }
 
