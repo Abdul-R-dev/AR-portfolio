@@ -127,13 +127,51 @@ body {
 }
 
 .sideImgC img {
-    height: 350px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0);
+    height: 100%;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0));
+    background: linear-gradient(to left, rgb(0, 0, 55), rgb(0, 0, 80));
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    form {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+.sideImgC::after, .sideImgC::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(150, 0, 184), blue, rgb(0, 254, 85), rgb(2, 230, 255), rgb(150, 0, 184));
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    padding: 4px;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+}
+
+.sideImgC::before {
+    filter: blur(5px);
 }
 
 .sideImgC {
+    height: 350px;
+    position: relative;
     animation: visibility 3s ease 0s 1 forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #RHstyleBar {
@@ -184,7 +222,6 @@ body {
     width: 30px;
     height: auto;
     margin-right: 20px;
-    filter: drop-shadow(0 0px 5px rgb(124, 194, 255));
 }
 
 .iconsC a img:hover {
@@ -222,7 +259,6 @@ body {
     padding: 20px 0px;
     font-size: 30px;
     color: rgb(124, 194, 255);
-    text-shadow: 2px 2px 20px;
 }
 
 .skillbox {
@@ -399,7 +435,6 @@ body {
     text-align: center;
     font-size: 30px;
     color: rgb(124, 194, 255);
-    text-shadow: 2px 2px 20px;
 }
 
 .resumeBtn {
@@ -416,7 +451,7 @@ body {
 
 @keyframes highlighter {
     0% {
-        box-shadow: 0px 0px 10px 1px rgba(77, 167, 246, 0.6);
+        box-shadow: 0px 0px 10px 0px rgba(77, 167, 246, 0.6);
     }
 
     50% {
@@ -424,7 +459,7 @@ body {
     }
 
     100% {
-        box-shadow: 0px 0px 10px 1px rgba(77, 167, 246, 0.6);
+        box-shadow: 0px 0px 10px 0px rgba(77, 167, 246, 0.6);
     }
 }
 
@@ -452,7 +487,6 @@ body {
     padding-top: 20px;
     font-size: 30px;
     color: rgb(124, 194, 255);
-    text-shadow: 2px 2px 20px;
 }
 
 .projectsC {
@@ -494,8 +528,16 @@ body {
     text-align: center;
 }
 
-.project img {
+.project div {
+    height: 150px;
+    width: 100%;
     object-fit: cover;
+}
+
+.project img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .project p {
@@ -551,7 +593,6 @@ body {
     padding-top: 20px;
     font-size: 30px;
     color: rgb(124, 194, 255);
-    text-shadow: 2px 2px 20px;
 }
 
 .forCenter {
